@@ -7,6 +7,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 
 public class Logowanie extends DriverFactory {
     private MainPage mainPage = new MainPage(driver);
@@ -44,12 +45,21 @@ public class Logowanie extends DriverFactory {
 
     @Then("^I can see User Information$")
     public void iCanSeeAlertMessage() {
-        signInPage.userInfomationLink.isDisplayed();
+        Assert.assertTrue(signInPage.userInfomationLink.isDisplayed());
     }
 
     @Then("^I can see login error$")
     public void iCanSeeLoginError() {
-        signInPage.alertPopUp.isDisplayed();
+        Assert.assertTrue(signInPage.alertPopUp.isDisplayed());
     }
 
+    @And("^I click on SIGN OUT link$")
+    public void iClickOnSINGOUTLink() {
+        signInPage.signOutLink.click();
+    }
+
+    @Then("^I see SIGN IN link$")
+    public void iSeeSIGNINLink() {
+        Assert.assertTrue(mainPage.signInLink.isDisplayed());
+    }
 }

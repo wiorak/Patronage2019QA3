@@ -6,7 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class SignInPage {
+
     private WebDriver driver;
 
     @FindBy(how = How.ID, using = "email")
@@ -24,6 +26,8 @@ public class SignInPage {
     @FindBy(how = How.CLASS_NAME, using = "account")
     public WebElement userInfomationLink;
 
+    @FindBy(how = How.CLASS_NAME, using = "logout")
+    public WebElement signOutLink;
     public SignInPage(final WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
