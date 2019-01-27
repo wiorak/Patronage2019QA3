@@ -47,4 +47,9 @@ public class Logowanie extends DriverFactory {
         signInPage.userInfomationLink.isDisplayed();
     }
 
+    @Then("^I can see login error$")
+    public void iCanSeeLoginError() {
+        signInPage.alertPopUp.isDisplayed();
+    }
+
 }
