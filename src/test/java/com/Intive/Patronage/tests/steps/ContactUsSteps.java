@@ -34,8 +34,8 @@ public class ContactUsSteps extends DriverFactory {
 
     }
 
-    @Then("^I see error popup$")
+    @Then("^I will see error popup$")
     public void iWillSeeErrorPopup() {
-        Assert.assertTrue(contactUsPage.alertPopUp.isDisplayed());
+        Assert.assertTrue("Alert Popup didn't displayed", contactUsPage.alertPopUp.isDisplayed());
     }
 }
