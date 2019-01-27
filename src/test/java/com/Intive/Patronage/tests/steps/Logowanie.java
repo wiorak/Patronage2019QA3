@@ -23,16 +23,16 @@ public class Logowanie extends DriverFactory {
         mainPage.signInLink.click();
     }
 
-    @And("^I input the Email address$")
-    public void iGivesTheEmailAddress() {
+    @And("^I input the Email address (.*)$")
+    public void iGivesTheEmailAddress(String email) {
         signInPage.emailInput.isDisplayed();
-        signInPage.emailInput.sendKeys("wioletta.rakowska@gmail.com");
+        signInPage.emailInput.sendKeys(email);
     }
 
-    @And("^I input the Password$")
-    public void iGivesThePassword() {
+    @And("^I input the Password (.*)$")
+    public void iGivesThePassword(String password) {
         signInPage.passwordInput.isDisplayed();
-        signInPage.passwordInput.sendKeys("098890pl");
+        signInPage.passwordInput.sendKeys(password);
 
     }
 
@@ -47,8 +47,4 @@ public class Logowanie extends DriverFactory {
         signInPage.userInfomationLink.isDisplayed();
     }
 
-    @Then("^I can see login error$")
-    public void iCanSeeLoginError() {
-        signInPage.alertPopUp.isDisplayed();
-    }
 }
