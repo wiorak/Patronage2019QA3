@@ -36,3 +36,10 @@ Feature: Logowanie do stony
     And I click on Sign in button
     And I click on SIGN OUT link
     Then I see SIGN IN link
+
+  Scenario: User registration - valid e-mail address
+    Given I open AutomationPractice website
+    When I click on SING IN link
+    And I input the CREATE AN ACCOUNT Email zenon@zmyler.com
+    And I click on CREATE AN ACCOUNT button
+    Then I see Registration Form

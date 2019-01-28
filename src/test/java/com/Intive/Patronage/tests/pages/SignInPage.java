@@ -6,11 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class SignInPage {
 
     private WebDriver driver;
 
+    /* web page elements */
     @FindBy(how = How.ID, using = "email")
     public WebElement emailInput;
 
@@ -28,6 +28,15 @@ public class SignInPage {
 
     @FindBy(how = How.CLASS_NAME, using = "logout")
     public WebElement signOutLink;
+
+    @FindBy(how = How.ID,using = "SubmitCreate")
+    public WebElement createAnAccountButton;
+
+
+    @FindBy(how = How.ID, using = "email_create")
+    public WebElement createEmailAddress;
+
+/* Constructor and other methods */
     public SignInPage(final WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

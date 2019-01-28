@@ -9,7 +9,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 
-public class Logowanie extends DriverFactory {
+public class SignInSteps extends DriverFactory {
     private MainPage mainPage = new MainPage(driver);
     private SignInPage signInPage = new SignInPage(driver);
 
@@ -63,3 +63,4 @@ public class Logowanie extends DriverFactory {
         Assert.assertTrue(mainPage.signInLink.isDisplayed());
     }
 }
+
